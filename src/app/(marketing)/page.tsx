@@ -1,0 +1,361 @@
+import { MaxWidthWrapper } from "@/components";
+import { BentoCard, BentoGrid, CARDS } from "@/components/ui/bento-grid";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { LampContainer } from "@/components/ui/lamp";
+import MagicBadge from "@/components/ui/magic-badge";
+import MagicCard from "@/components/ui/magic-card";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { cn, COMPANIES, PLANS, PROCESS } from "@/utils";
+import { REVIEWS } from "@/utils/constants/misc";
+import { currentUser } from "@clerk/nextjs/server";
+import { ArrowRightIcon, ArrowUpCircle, CheckCircleIcon, CreditCardIcon, HeadphonesIcon, StarIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+const HomePage = async () => {
+
+    const user = await currentUser();
+
+    return (
+        <>
+            <MaxWidthWrapper>
+                <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
+                    <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
+                        <span>
+                            <span className="spark mask-gradient absolute inset-0 h-[100%] w-[100%] animate-flip overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:animate-rotate before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
+                        </span>
+                        <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-900" />
+                        <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
+                        <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
+                            ✨ Manage links smarter
+                            <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+                        </span>
+                    </button>
+                    <h1 className="text-foreground py-6 text-5xl font-semibold md:font-semibold leading-none tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl w-full font-heading">
+                        Supercharge your
+                        <br className="hidden md:block" />
+                        <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text px-2 lg:pr-4">
+                            links
+                        </span>
+                        in smarter way
+                    </h1>
+                    <p className="mb-12 text-lg tracking-tight text-muted-foreground md:text-xl text-balance">
+                        Effortlessly streamline your link management with Linkify.
+                        <br className="hidden md:block" />
+                        Shorten, track, and organize all your links in one place.
+                    </p>
+                    <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
+                        <Button asChild>
+                            <Link href={user ? "/dashboard" : "/auth/sign-in"} className="flex items-center">
+                                Start creating for free
+                                <ArrowRightIcon className="w-4 h-4 ml-2" />
+                            </Link>
+                        </Button>
+                    </div>
+                    <div className="relative pt-20 pb-20 md:py-32 bg-transparent w-full">
+                        <div className="absolute md:top-[10%] left-1/2 gradient w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 inset-0 blur-[5rem] animate-image-glow"></div>
+                        <div className="-m-2 rounded-xl p-2 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-3xl">
+                            <BorderBeam
+                                size={250}
+                                duration={12}
+                                delay={9}
+                            />
+                            <Image
+                                src="/assets/dashboard-dark.svg"
+                                alt="Dashboard"
+                                width={1200}
+                                height={1200}
+                                quality={100}
+                                className="rounded-md lg:rounded-xl bg-foreground/10 ring-1 ring-border"
+                            />
+                            <div className="absolute -bottom-4 inset-x-0 w-full h-1/2 bg-gradient-to-t from-background z-40"></div>
+                            <div className="absolute bottom-0 md:-bottom-8 inset-x-0 w-full h-1/4 bg-gradient-to-t from-background z-50"></div>
+                        </div>
+                    </div>
+                </div>
+            </MaxWidthWrapper>
+
+            <MaxWidthWrapper>
+                <div className="py-14">
+                    <div className="mx-auto px-4 md:px-8">
+                        <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
+                            Trusted by the best in the industry
+                        </h2>
+                        <div className="mt-8">
+                            <ul className="flex flex-wrap items-center gap-x-6 gap-y-6 md:gap-x-16 justify-center">
+                                {COMPANIES.map((company) => (
+                                    <li key={company.name}>
+                                        <Image
+                                            src={company.logo}
+                                            alt={company.name}
+                                            width={80}
+                                            height={80}
+                                            quality={100}
+                                            className="w-28 h-auto"
+                                        />
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </MaxWidthWrapper>
+
+            {/* <div className="[--color:#9333ea] pointer-events-none relative -z-[2] mx-auto h-[50rem] overflow-hidden [mask-image:radial-gradient(ellipse_at_center_center,#000,transparent_50%)] my-[-18.8rem] before:absolute before:inset-0 before:h-full before:w-full before:opacity-40 before:[background-image:radial-gradient(circle_at_bottom_center,var(--color),transparent_70%)] after:absolute after:-left-1/2 after:top-1/2 after:aspect-[1/0.7] after:w-[200%] after:rounded-[50%] after:border-t after:border-[hsl(var(--border))] after:bg-background"></div> */}
+
+            <MaxWidthWrapper className="pt-10">
+                <div className="flex flex-col w-full items-start lg:items-center justify-center py-8">
+                    <MagicBadge title="Features" />
+                    <h2 className="text-start lg:text-center text-3xl md:text-5xl font-semibold font-heading text-foreground mt-6">
+                        Manage Links Like a Pro
+                    </h2>
+                    <p className="mt-4 text-start lg:text-center text-lg text-muted-foreground max-w-lg">
+                        Linkify is a powerful link management tool that helps you shorten, track, and organize all your links in one place.
+                    </p>
+                </div>
+                <BentoGrid className="py-8">
+                    {CARDS.map((feature, idx) => (
+                        <BentoCard key={idx} {...feature} />
+                    ))}
+                </BentoGrid>
+            </MaxWidthWrapper>
+
+            <MaxWidthWrapper className="py-10">
+                <div className="flex flex-col items-start lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
+                    <MagicBadge title="The Process" />
+                    <h2 className="text-start lg:text-center text-3xl md:text-5xl font-semibold font-heading text-foreground mt-6">
+                        Effortless link management in 3 steps
+                    </h2>
+                    <p className="mt-4 text-start lg:text-center text-lg text-muted-foreground max-w-lg">
+                        Follow these simple steps to optimize, organize, and share your links with ease.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full py-8 gap-4 md:gap-8">
+                    {PROCESS.map((process, id) => (
+                        <MagicCard key={id} className="group md:py-8">
+                            <div className="flex flex-col items-start justify-center w-full">
+                                <process.icon strokeWidth={1.5} className="w-10 h-10 text-foreground" />
+                                <div className="flex flex-col relative items-start">
+                                    <span className="absolute -top-6 right-0 border-2 border-border text-foreground font-semibold text-2xl rounded-full w-12 h-12 flex items-center justify-center pt-0.5">
+                                        {id + 1}
+                                    </span>
+                                    <h3 className="text-base mt-6 font-semibold text-foreground">
+                                        {process.title}
+                                    </h3>
+                                    <p className="mt-2 text-sm text-muted-foreground">
+                                        {process.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </MagicCard>
+                    ))}
+                </div>
+            </MaxWidthWrapper>
+
+            <MaxWidthWrapper className="py-10">
+                <div className="flex flex-col items-start lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
+                    <MagicBadge title="Simple Pricing" />
+                    <h2 className="text-start lg:text-center text-3xl md:text-5xl font-semibold font-heading text-foreground mt-6">
+                        Choose a plan that works for you
+                    </h2>
+                    <p className="mt-4 text-start lg:text-center text-lg text-muted-foreground max-w-lg">
+                        Get started with Linkify today and enjoy more features with our pro plans.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full md:gap-8 py-10 flex-wrap max-w-5xl mx-auto">
+                    {PLANS.map((plan, index) => (
+                        <Card
+                            key={index}
+                            className={cn(
+                                "flex flex-col w-full border-border rounded-xl",
+                                plan.name === "Pro" && "border-2 border-purple-500"
+                            )}
+                        >
+                            <CardHeader className={cn(
+                                "border-b border-border",
+                                plan.name === "Pro" ? "bg-purple-500/[0.07]" : "bg-foreground/[0.03]"
+                            )}>
+                                <CardTitle className={cn(plan.name !== "Pro" && "text-muted-foreground", "text-lg font-medium")}>
+                                    {plan.name}
+                                </CardTitle>
+                                <CardDescription>
+                                    {plan.info}
+                                </CardDescription>
+                                <h5 className="text-3xl font-semibold">
+                                    ${plan.price.monthly}
+                                    <span className="text-base text-muted-foreground font-normal">
+                                        /month
+                                    </span>
+                                </h5>
+                            </CardHeader>
+                            <CardContent className="pt-6 space-y-4">
+                                {plan.features.map((feature, index) => (
+                                    <div key={index} className="flex items-center gap-2">
+                                        <CheckCircleIcon className="text-purple-500 w-4 h-4" />
+                                        <TooltipProvider>
+                                            <Tooltip delayDuration={0}>
+                                                <TooltipTrigger asChild>
+                                                    <p className={cn(feature.tooltip && "border-b !border-dashed border-border cursor-pointer")}>{feature.text}</p>
+                                                </TooltipTrigger>
+                                                {feature.tooltip && (
+                                                    <TooltipContent>
+                                                        <p>{feature.tooltip}</p>
+                                                    </TooltipContent>
+                                                )}
+                                            </Tooltip>
+                                        </TooltipProvider>
+                                    </div>
+                                ))}
+                            </CardContent>
+                            <CardFooter className="w-full pt- mt-auto">
+                                <Link
+                                    href={plan.btn.href}
+                                    style={{ width: "100%" }}
+                                    className={buttonVariants({ className: plan.name === "Pro" && "bg-purple-500 hover:bg-purple-500/80 text-white" })}
+                                >
+                                    {plan.btn.text}
+                                </Link>
+                            </CardFooter>
+                        </Card>
+                    ))}
+                </div>
+                <div className="flex flex-wrap items-start md:items-center justify-center lg:justify-evenly gap-6 mt-4 max-w-5xl mx-auto w-full">
+                    <div className="flex items-center gap-2">
+                        <CreditCardIcon className="w-5 h-5 text-foreground" />
+                        <span className="text-muted-foreground">
+                            100% secure payments
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <HeadphonesIcon className="w-5 h-5 text-foreground" />
+                        <span className="text-muted-foreground">
+                            24/7 customer support
+                        </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <ArrowUpCircle className="w-5 h-5 text-foreground" />
+                        <span className="text-muted-foreground">
+                            Regular updates
+                        </span>
+                    </div>
+                </div>
+            </MaxWidthWrapper>
+
+            <MaxWidthWrapper className="py-10">
+                <div className="flex flex-col items-start lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
+                    <MagicBadge title="Our Customers" />
+                    <h2 className="text-start lg:text-center text-3xl md:text-5xl font-semibold font-heading text-foreground mt-6">
+                        What our users are saying
+                    </h2>
+                    <p className="mt-4 text-start lg:text-center text-lg text-muted-foreground max-w-lg">
+                        Here's what some of our users have to say about Linkify.
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-start gap-4 md:gap-8 py-10">
+                    <div className="flex flex-col items-start h-min gap-6">
+                        {REVIEWS.slice(0, 3).map((review, index) => (
+                            <MagicCard key={index} className="md:p-0">
+                                <Card className="flex flex-col w-full border-none h-min">
+                                    <CardHeader className="space-y-0">
+                                        <CardTitle className="text-lg font-medium text-muted-foreground">
+                                            {review.name}
+                                        </CardTitle>
+                                        <CardDescription>
+                                            {review.username}
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="space-y-4 pb-4">
+                                        <p className="text-muted-foreground">
+                                            {review.review}
+                                        </p>
+                                    </CardContent>
+                                    <CardFooter className="w-full space-x-1 mt-auto">
+                                        {Array.from({ length: review.rating }, (_, i) => (
+                                            <StarIcon key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                                        ))}
+                                    </CardFooter>
+                                </Card>
+                            </MagicCard>
+                        ))}
+                    </div>
+                    <div className="flex flex-col items-start h-min gap-6">
+                        {REVIEWS.slice(3, 6).map((review, index) => (
+                            <MagicCard key={index} className="md:p-0">
+                                <Card className="flex flex-col w-full border-none h-min">
+                                    <CardHeader className="space-y-0">
+                                        <CardTitle className="text-lg font-medium text-muted-foreground">
+                                            {review.name}
+                                        </CardTitle>
+                                        <CardDescription>
+                                            {review.username}
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="space-y-4 pb-4">
+                                        <p className="text-muted-foreground">
+                                            {review.review}
+                                        </p>
+                                    </CardContent>
+                                    <CardFooter className="w-full space-x-1 mt-auto">
+                                        {Array.from({ length: review.rating }, (_, i) => (
+                                            <StarIcon key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                                        ))}
+                                    </CardFooter>
+                                </Card>
+                            </MagicCard>
+                        ))}
+                    </div>
+                    <div className="flex flex-col items-start h-min gap-6">
+                        {REVIEWS.slice(6, 9).map((review, index) => (
+                            <MagicCard key={index} className="md:p-0">
+                                <Card className="flex flex-col w-full border-none h-min">
+                                    <CardHeader className="space-y-0">
+                                        <CardTitle className="text-lg font-medium text-muted-foreground">
+                                            {review.name}
+                                        </CardTitle>
+                                        <CardDescription>
+                                            {review.username}
+                                        </CardDescription>
+                                    </CardHeader>
+                                    <CardContent className="space-y-4 pb-4">
+                                        <p className="text-muted-foreground">
+                                            {review.review}
+                                        </p>
+                                    </CardContent>
+                                    <CardFooter className="w-full space-x-1 mt-auto">
+                                        {Array.from({ length: review.rating }, (_, i) => (
+                                            <StarIcon key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                                        ))}
+                                    </CardFooter>
+                                </Card>
+                            </MagicCard>
+                        ))}
+                    </div>
+                </div>
+            </MaxWidthWrapper>
+
+            <MaxWidthWrapper className="pb-10 mt-20">
+                <LampContainer>
+                    <div className="flex flex-col items-center justify-center relative w-full text-center">
+                        <h2 className="bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-semibold font-heading tracking-tight text-transparent md:text-7xl mt-8">
+                            Step into the future of link management
+                        </h2>
+                        <p className="text-muted-foreground mt-6 max-w-md mx-auto">
+                            Experience the cutting-edge solution that transforms how you handle your links. Elevate your online presence with our next-gen platform.
+                        </p>
+                        <div className="mt-6">
+                            <Button>
+                                Get started for free
+                                <ArrowRightIcon className="w-4 h-4 ml-2" />
+                            </Button>
+                        </div>
+                    </div>
+                </LampContainer>
+            </MaxWidthWrapper>
+
+        </>
+    )
+};
+
+export default HomePage
