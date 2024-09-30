@@ -1,6 +1,6 @@
 <img src="https://github.com/user-attachments/assets/e1e0fe16-21f4-44c8-a22d-39b4494433a1" alt="Link Management Logo" width="50" height="50">
 
-# 🔗 Linkify - The Link Management Platform for Businesses
+# 🔗 Linkify - The Link Management Platform for Businesses(Landing Page)
 
 <!-- <img src="https://github.com/user-attachments/assets/deab03fd-4234-44c3-a6ad-484c4a1a02a1" alt="Linkify Thubmnail"> -->
 
@@ -66,13 +66,13 @@ To run Linkify locally, follow these steps:
 
 ## ☕ Buy Me a Coffee
 If you enjoy using Linkify, consider supporting my work!  
-[Buy Me a Coffee ☕](https://buymeacoffee.com/yourusername)
+[Buy Me a Coffee ☕](https://buymeacoffee.com/shreyas29)
 
 ## 📜 License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## 💬 Contact
-If you have any questions or feedback, feel free to reach out via [GitHub Issues](https://github.com/Shreyas/linkify/issues).
+If you have any questions or feedback, feel free to reach out via [GitHub Issues](https://github.com/Shreyas-29/linkify/issues).
 
 ---
 
