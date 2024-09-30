@@ -142,7 +142,7 @@ const Privacy = () => {
             </p>
 
             <h2 className="text-xl font-medium mt-12">
-                Children's Privacy
+                Children&apos;s Privacy
             </h2>
             <p className="mt-8 text-muted-foreground">
                 Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from children under 18. If we become aware that we have collected personal information from a child under 18, we will take steps to delete such information.
@@ -159,7 +159,7 @@ const Privacy = () => {
                 Changes to This Privacy Policy
             </h2>
             <p className="mt-8 text-muted-foreground">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our website and updating the "Last updated" date at the top of this page.
+                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on our website and updating the &quot;Last updated&quot; date at the top of this page.
             </p>
 
             <h2 className="text-xl font-medium mt-12">

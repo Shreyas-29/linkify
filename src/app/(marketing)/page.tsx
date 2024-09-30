@@ -176,7 +176,7 @@ const HomePage = async () => {
                         What our users are saying
                     </h2>
                     <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-                        Here's what some of our users have to say about Linkify.
+                        Here&apos;s what some of our users have to say about Linkify.
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-start gap-4 md:gap-8 py-10">

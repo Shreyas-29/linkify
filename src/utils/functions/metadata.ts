@@ -43,6 +43,6 @@ export const generateMetadata = ({
         ...(image && { card: "summary_large_image", images: [image] }),
         creator: "@shreyassihasane",
     },
-    metadataBase: new URL(process.env.APP_DOMAIN!),
+    // metadataBase: new URL(process.env.APP_DOMAIN!),
     ...(noIndex && { robots: { index: false, follow: false } }),
 });

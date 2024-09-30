@@ -11,7 +11,7 @@ const TermsPage = () => {
                 Last updated: 17th June 2024
             </p>
             <p className="mt-4">
-                Welcome to Linkify. These terms and conditions outline the rules and regulations for the use of Linkify's website and services.
+                Welcome to Linkify. These terms and conditions outline the rules and regulations for the use of Linkify&apos;s website and services.
             </p>
 
             <h2 className="text-xl font-medium mt-8">
@@ -26,7 +26,7 @@ const TermsPage = () => {
                 Changes to Terms
             </h2>
             <p className="mt-8 text-muted-foreground">
-                Linkify reserves the right to modify these terms at any time. We will notify you of any changes by updating the "Last updated" data at the top of this page. You continued use of our website and services after any modifications indicates your acceptance of the new terms.
+                Linkify reserves the right to modify these terms at any time. We will notify you of any changes by updating the &quot;Last updated&quot; data at the top of this page. You continued use of our website and services after any modifications indicates your acceptance of the new terms.
             </p>
 
             <h2 className="text-xl font-medium mt-12">
@@ -137,7 +137,7 @@ const TermsPage = () => {
                 No Warranties
             </h3>
             <p className="mt-8 text-muted-foreground">
-                Linkify is provided on an "as is" and "as available" basis. We do not warrant that the service will be uninterrupted, error-free, or free from viruses or other harmful components.
+                Linkify is provided on an &quot;as is&quot; and &quot;as available&quot; basis. We do not warrant that the service will be uninterrupted, error-free, or free from viruses or other harmful components.
             </p>
 
             <h3 className="text-lg mt-8">

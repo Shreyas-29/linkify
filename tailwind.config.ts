@@ -87,14 +87,6 @@ const config = {
           "0%": { transform: "translateY(-50%)" },
           "100%": { transform: "translateY(0)" },
         },
-        "ripple": {
-          "0%, 100%": {
-            transform: "translate(-50%, -50%) scale(1)",
-          },
-          "50%": {
-            transform: "translate(-50%, -50%) scale(0.9)",
-          },
-        },
         "wiggle": {
           "0%, 100%": {
             transform: "translateX(0%)",
@@ -182,7 +174,6 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "grid": "grid 15s linear infinite",
-        "ripple": "ripple 3400ms ease infinite",
         "wiggle": "wiggle 0.75s infinite",
         "spinner": "spinner 1.2s linear infinite",
         "blink": "blink 1.4s infinite both",
