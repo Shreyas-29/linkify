@@ -9,7 +9,7 @@ import { aeonik, inter } from "./constants/fonts";
 // functions
 import { cn } from "./functions/cn";
 import { isValidUrl } from "./functions/urls";
-import { generateMetadata } from "./functions/generate-metadata";
+import { generateMetadata } from "./functions/metadata";
 
 export {
     // constants

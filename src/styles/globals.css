@@ -101,10 +101,6 @@ html, body {
   background: rgba(0, 0, 0, 0);
 }
 
-.shadow-menu {
-  /* box-shadow: 2px 2px 30px 4px rgba(229, 229, 229, 0.5); */
-}
-
 .gradient {
   background: conic-gradient(from 230.29deg at 51.63% 52.16%, rgb(36, 0, 255) 0deg, rgb(0, 135, 255) 67.5deg, rgb(108, 39, 157) 198.75deg, rgb(24, 38, 163) 251.25deg, rgb(54, 103, 196) 301.88deg, rgb(105, 30, 255) 360deg);
 }

@@ -1,7 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
-import { Heart } from 'lucide-react'
 import { Icons } from "@/components"
+import Link from 'next/link'
 
 const Footer = () => {
     return (
@@ -19,7 +17,7 @@ const Footer = () => {
                         Manage your links with ease.
                     </p>
                     <span className="mt-4 text-neutral-200 text-sm flex items-center">
-                        Made in <Heart className="w-3.5 h-3.5 ml-1 fill-primary text-primary" /> India with
+                        Made by <Link href="https://shreyas-sihasane.vercel.app/" className="font-semibold ml-1">Shreyas</Link>
                     </span>
                 </div>
 

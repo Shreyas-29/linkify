@@ -1,6 +1,5 @@
 import { Icons, SignUpForm } from "@/components";
 import Link from "next/link";
-import React from 'react'
 
 const SignUpPage = () => {
     return (

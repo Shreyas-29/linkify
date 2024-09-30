@@ -1,6 +1,6 @@
-import React from 'react';
+import { MaxWidthWrapper } from "@/components";
 import { Toaster } from "@/components/ui/sonner";
-import { MaxWidthWrapper, Providers } from "@/components";
+import React from 'react';
 
 interface Props {
     children: React.ReactNode
@@ -8,14 +8,12 @@ interface Props {
 
 const MarketingLayout = ({ children }: Props) => {
     return (
-        // <Providers>
         <MaxWidthWrapper>
             <Toaster richColors theme="dark" position="top-right" />
             <main className="mx-auto w-full relative">
                 {children}
             </main>
         </MaxWidthWrapper>
-        // </Providers>
     );
 };
 

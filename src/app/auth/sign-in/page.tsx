@@ -1,6 +1,5 @@
 import { Icons, SignInForm } from "@/components";
 import Link from "next/link";
-import React from 'react'
 
 const SignInPage = () => {
     return (

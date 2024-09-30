@@ -1,12 +1,10 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
-
-const isPublicRoute = createRouteMatcher(["/", "/auth/sign-in", "/auth/sign-up"]);
 
 export default clerkMiddleware((auth, req) => {
     const url = req.nextUrl.pathname;
 
-    const { userId, redirectToSignIn } = auth();
+    const { userId } = auth();
 
     // Protect /dashboard and sub-routes
     if (!userId && url.startsWith("/dashboard")) {
@@ -21,11 +19,11 @@ export default clerkMiddleware((auth, req) => {
 
 export const config = {
     matcher: [
-        '/((?!.*\\..*|_next).*)',
-        '/(api|trpc)(.*)',
-        '/dashboard(.*)',
-        '/',
-        '/auth/sign-in',
-        '/auth/sign-up',
+        "/((?!.*\\..*|_next).*)",
+        "/(api|trpc)(.*)",
+        "/dashboard(.*)",
+        "/",
+        "/auth/sign-in",
+        "/auth/sign-up",
     ],
 };

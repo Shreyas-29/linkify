@@ -1,11 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react'
-import MaxWidthWrapper from "../global/max-width-wrapper"
-import Link from "next/link"
-import { cn, NAV_LINKS } from "@/utils"
-import Logo from "../ui/logo"
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -14,11 +9,14 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { Icons } from "@/components";
-import { Icon, LucideIcon, ZapIcon } from "lucide-react";
-import MobileNavbar from "./mobile-navbar";
+} from "@/components/ui/navigation-menu";
+import { cn, NAV_LINKS } from "@/utils";
 import { useAuth } from "@clerk/nextjs";
+import { LucideIcon, ZapIcon } from "lucide-react";
+import Link from "next/link";
+import React, { useEffect, useState } from 'react';
+import MaxWidthWrapper from "../global/max-width-wrapper";
+import MobileNavbar from "./mobile-navbar";
 
 const Navbar = () => {
 

@@ -34,34 +34,28 @@ model User {
 
 model Link {
   id         String    @id @default(cuid()) @map("_id")
-  domain     String // domain of the link (e.g. dub.sh) – also stored on Redis
-  key        String // key of the link (e.g. /github) – also stored on Redis
-  url        String // target url (e.g. https://github.com/dubinc/dub) – also stored on Redis
-  expiresAt  DateTime? // when the link expires – stored on Redis via ttl
-  expiredUrl String? // URL to redirect the user to when the link is expired
-  password   String? // password to access the link
+  domain     String
+  key        String
+  url        String
+  expiresAt  DateTime?
+  expiredUrl String?
+  password   String?
   externalId String?
 
-  proxy       Boolean @default(false) // Proxy to use custom OG tags (stored on redis) – if false, will use OG tags from target url
-  title       String? // OG title for the link (e.g. Dub.co - Open-Source Link Management Infrastructure)
-  description String? // OG description for the link (e.g. An open-source link management tool for modern marketing teams to create, share, and track short links.)
-  image       String? // OG image for the link (e.g. https://d.to/og)
+  proxy       Boolean @default(false)
+  title       String?
+  description String?
+  image       String?
 
-  // User who created the link
   user   User?   @relation(fields: [userId], references: [id])
   userId String?
 
-  // Project that the link belongs to
-  // project       Project? @relation(fields: [projectId], references: [id], onUpdate: Cascade, onDelete: Cascade)
-  // projectId     String? // Relational reference to the project domain
-
-  publicStats Boolean   @default(false) // whether to show public stats or not
-  clicks      Int       @default(0) // number of clicks
-  lastClicked DateTime? // when the link was last clicked
+  publicStats Boolean   @default(false)
+  clicks      Int       @default(0)
+  lastClicked DateTime?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 
-  // Link tags
   tags LinkTag[]
 }
 

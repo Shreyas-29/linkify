@@ -1,7 +1,7 @@
 import { MaxWidthWrapper } from "@/components";
 import React from 'react';
 
-const Privacy: React.FC = () => {
+const Privacy = () => {
     return (
         <MaxWidthWrapper className="max-w-3xl mx-auto px-8 mb-40">
             <h1 className="text-4xl md:text-6xl font-heading font-bold my-12 text-center w-full">

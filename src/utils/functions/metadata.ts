@@ -32,17 +32,17 @@ export const generateMetadata = ({
     title,
     description,
     icons,
-    // openGraph: {
-    //     title,
-    //     description,
-    //     ...(image && { images: [{ url: image }] }),
-    // },
-    // twitter: {
-    //     title,
-    //     description,
-    //     ...(image && { card: "summary_large_image", images: [image] }),
-    //     creator: "@shreyassihasane",
-    // },
-    // metadataBase: new URL(process.env.APP_DOMAIN!),
-    // ...(noIndex && { robots: { index: false, follow: false } }),
+    openGraph: {
+        title,
+        description,
+        ...(image && { images: [{ url: image }] }),
+    },
+    twitter: {
+        title,
+        description,
+        ...(image && { card: "summary_large_image", images: [image] }),
+        creator: "@shreyassihasane",
+    },
+    metadataBase: new URL(process.env.APP_DOMAIN!),
+    ...(noIndex && { robots: { index: false, follow: false } }),
 });

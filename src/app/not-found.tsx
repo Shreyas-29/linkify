@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { Footer, Navbar } from '@/components';
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 
 const NotFound = () => {
     return (

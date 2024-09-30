@@ -32,7 +32,7 @@ const HomePage = async () => {
                             <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                         </span>
                     </button>
-                    <h1 className="text-foreground text-center py-6 text-5xl font-semibold md:font-semibold tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
+                    <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
                         Smart Links with <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
                             Precision
                         </span>
@@ -102,7 +102,7 @@ const HomePage = async () => {
             <MaxWidthWrapper className="pt-10 ">
                 <div className="flex flex-col w-full items-center lg:items-center justify-center py-8">
                     <MagicBadge title="Features" />
-                    <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-semibold font-heading text-foreground mt-6">
+                    <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
                         Manage Links Like a Pro
                     </h2>
                     <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
@@ -119,7 +119,7 @@ const HomePage = async () => {
             <MaxWidthWrapper className="py-10 ">
                 <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
                     <MagicBadge title="The Process" />
-                    <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-semibold font-heading text-foreground mt-6">
+                    <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
                         Effortless link management in 3 steps
                     </h2>
                     <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
@@ -132,10 +132,10 @@ const HomePage = async () => {
                             <div className="flex flex-col items-start justify-center w-full">
                                 <process.icon strokeWidth={1.5} className="w-10 h-10 text-foreground" />
                                 <div className="flex flex-col relative items-start">
-                                    <span className="absolute -top-6 right-0 border-2 border-border text-foreground font-semibold text-2xl rounded-full w-12 h-12 flex items-center justify-center pt-0.5">
+                                    <span className="absolute -top-6 right-0 border-2 border-border text-foreground font-medium text-2xl rounded-full w-12 h-12 flex items-center justify-center pt-0.5">
                                         {id + 1}
                                     </span>
-                                    <h3 className="text-base mt-6 font-semibold text-foreground">
+                                    <h3 className="text-base mt-6 font-medium text-foreground">
                                         {process.title}
                                     </h3>
                                     <p className="mt-2 text-sm text-muted-foreground">
@@ -151,7 +151,7 @@ const HomePage = async () => {
             <MaxWidthWrapper className="py-10 ">
                 <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
                     <MagicBadge title="Simple Pricing" />
-                    <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-semibold font-heading text-foreground mt-6">
+                    <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
                         Choose a plan that works for you
                     </h2>
                     <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
@@ -172,7 +172,7 @@ const HomePage = async () => {
             <MaxWidthWrapper className="py-10 ">
                 <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
                     <MagicBadge title="Our Customers" />
-                    <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-semibold font-heading text-foreground mt-6">
+                    <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
                         What our users are saying
                     </h2>
                     <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
@@ -264,7 +264,7 @@ const HomePage = async () => {
             <MaxWidthWrapper className="mt-20 ">
                 <LampContainer>
                     <div className="flex flex-col items-center justify-center relative w-full text-center">
-                        <h2 className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-semibold font-heading tracking-tight text-transparent mt-8">
+                        <h2 className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
                             Step into the future of link management
                         </h2>
                         <p className="text-muted-foreground mt-6 max-w-md mx-auto">

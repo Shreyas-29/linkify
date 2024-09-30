@@ -1,24 +1,11 @@
-"use client";
-
 import { MaxWidthWrapper, PricingCards } from "@/components";
-import { Button, buttonVariants } from "@/components/ui/button";
-import MagicBadge from "@/components/ui/magic-badge";
-import React, { useState } from 'react';
-import { cn, COMPANIES, PLANS, PROCESS } from "@/utils";
-import { REVIEWS } from "@/utils/constants/misc";
-import { currentUser } from "@clerk/nextjs/server";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion"
-import Image from "next/image";
-import Link from "next/link";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { motion } from "framer-motion";
+} from "@/components/ui/accordion";
+import MagicBadge from "@/components/ui/magic-badge";
 import { FAQ } from "@/utils/constants/faq";
 
 const PricingPage = () => {

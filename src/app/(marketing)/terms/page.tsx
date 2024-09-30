@@ -1,6 +1,5 @@
 import { MaxWidthWrapper } from "@/components";
 import Link from "next/link";
-import React from 'react';
 
 const TermsPage = () => {
     return (
