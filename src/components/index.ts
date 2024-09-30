@@ -17,6 +17,8 @@ import Providers from "./providers/providers";
 import Sidebar from "./dashboard/sidebar";
 import DashboardNavbar from "./dashboard/dashboard-navbar";
 
+import PricingCards from "./pricing-cards";
+
 
 export {
     SignInForm,
@@ -32,4 +34,6 @@ export {
 
     Sidebar,
     DashboardNavbar,
+
+    PricingCards,
 };

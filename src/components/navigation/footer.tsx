@@ -7,8 +7,7 @@ const Footer = () => {
     return (
         <footer className="flex flex-col relative items-center justify-center border-t border-border pt-16 pb-8 px-6 lg:px-8 w-full max-w-6xl mx-auto lg:pt-32">
 
-            {/* <div className="hidden lg:block absolute -top-1/3 -right-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div> */}
-            <div className="hidden lg:block absolute bottom-0 -left-1/4 bg-primary w-72 h-72 rounded-full -z-10 blur-[14rem]"></div>
+            <div className="hidden lg:block absolute bottom-0 -left-1/4 bg-purple-500/60 w-72 h-72 rounded-full -z-10 blur-[14rem]"></div>
 
             <div className="grid gap-8 xl:grid-cols-3 xl:gap-8 w-full">
 
@@ -88,17 +87,12 @@ const Footer = () => {
                             </h3>
                             <ul className="mt-4 text-sm text-muted-foreground">
                                 <li className="mt-2">
-                                    <Link href="" className="hover:text-foreground transition-all duration-300">
+                                    <Link href="/resources/blog" className="hover:text-foreground transition-all duration-300">
                                         Blog
                                     </Link>
                                 </li>
                                 <li className="mt-2">
-                                    <Link href="" className="hover:text-foreground transition-all duration-300">
-                                        Case Studies
-                                    </Link>
-                                </li>
-                                <li className="mt-2">
-                                    <Link href="" className="hover:text-foreground transition-all duration-300">
+                                    <Link href="/resources/help" className="hover:text-foreground transition-all duration-300">
                                         Support
                                     </Link>
                                 </li>
@@ -110,7 +104,7 @@ const Footer = () => {
                             </h3>
                             <ul className="mt-4 text-sm text-muted-foreground">
                                 <li className="">
-                                    <Link href="/about" className="hover:text-foreground transition-all duration-300">
+                                    <Link href="" className="hover:text-foreground transition-all duration-300">
                                         About Us
                                     </Link>
                                 </li>

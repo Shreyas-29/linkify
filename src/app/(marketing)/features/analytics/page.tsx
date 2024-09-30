@@ -76,9 +76,11 @@ const AnalyticsPage = () => {
                             Take control of your links with advanced features and real-time insights. Simplify your workflow and achieve more.
                         </p>
                         <div className="mt-6">
-                            <Button>
-                                Get started for free
-                                <ArrowRightIcon className="w-4 h-4 ml-2" />
+                            <Button asChild>
+                                <Link href="/auth/sign-up" className="flex items-center">
+                                    Get started for free
+                                    <ArrowRightIcon className="w-4 h-4 ml-2" />
+                                </Link>
                             </Button>
                         </div>
                     </div>

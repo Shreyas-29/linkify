@@ -38,7 +38,7 @@ const MobileNavbar = () => {
                     </Button>
                 </SheetTrigger>
                 <SheetContent className="w-screen">
-                    <SheetClose asChild className="absolute top-6 right-5 bg-background z-20 flex items-center justify-center">
+                    <SheetClose asChild className="absolute top-3 right-5 bg-background z-20 flex items-center justify-center">
                         <Button size="icon" variant="ghost" className="text-neutral-600">
                             <X className="w-5 h-5" />
                         </Button>

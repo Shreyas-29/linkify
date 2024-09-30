@@ -71,10 +71,9 @@ const Navbar = () => {
                                                             <div className="absolute inset-0 !z-10 h-full w-[calc(100%-10px)] bg-[linear-gradient(to_right,rgb(38,38,38,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgb(38,38,38,0.5)_1px,transparent_1px)] bg-[size:1rem_1rem]"></div>
                                                             <NavigationMenuLink asChild className="z-20 relative">
                                                                 <Link
-                                                                    href="/features"
+                                                                    href="/"
                                                                     className="flex h-full w-full select-none flex-col justify-end rounded-lg bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
                                                                 >
-                                                                    {/* <Icons.bolt className="h-8 w-8" /> */}
                                                                     <h6 className="mb-2 mt-4 text-lg font-medium">
                                                                         All Features
                                                                     </h6>
@@ -125,7 +124,8 @@ const Navbar = () => {
                                 Sign In
                             </Link>
                             <Link href="/auth/sign-up" className={buttonVariants({ size: "sm", })}>
-                                Get Started ⚡
+                                Get Started
+                                <ZapIcon className="size-3.5 ml-1.5 text-orange-500 fill-orange-500" />
                             </Link>
                         </div>
                     )}
