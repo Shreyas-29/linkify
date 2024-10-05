@@ -18,7 +18,7 @@ const HomePage = async () => {
     const user = await currentUser();
 
     return (
-        <>
+        <div className="overflow-x-hidden scrollbar-hide size-full">
             {/* Hero Section */}
             <MaxWidthWrapper>
                 <div className="flex flex-col items-center justify-center w-full text-center bg-gradient-to-t from-background">
@@ -107,7 +107,7 @@ const HomePage = async () => {
             </MaxWidthWrapper>
 
             {/* Features Section */}
-            <MaxWidthWrapper className="pt-10 hidden">
+            <MaxWidthWrapper className="pt-10">
                 <AnimationContainer delay={0.1}>
                     <div className="flex flex-col w-full items-center lg:items-center justify-center py-8">
                         <MagicBadge title="Features" />
@@ -194,7 +194,7 @@ const HomePage = async () => {
             </MaxWidthWrapper>
 
             {/* Reviews Section */}
-            <MaxWidthWrapper className="py-10 hidden">
+            <MaxWidthWrapper className="py-10">
                 <AnimationContainer delay={0.1}>
                     <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
                         <MagicBadge title="Our Customers" />
@@ -295,7 +295,7 @@ const HomePage = async () => {
             </MaxWidthWrapper>
 
             {/* CTA Section */}
-            <MaxWidthWrapper className="mt-20 ">
+            <MaxWidthWrapper className="mt-20 max-w-[100vw] overflow-x-hidden scrollbar-hide">
                 <AnimationContainer delay={0.1}>
                     <LampContainer>
                         <div className="flex flex-col items-center justify-center relative w-full text-center">
@@ -316,7 +316,7 @@ const HomePage = async () => {
                 </AnimationContainer>
             </MaxWidthWrapper>
 
-        </>
+        </div>
     )
 };
 

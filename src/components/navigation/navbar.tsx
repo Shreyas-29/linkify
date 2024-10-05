@@ -42,7 +42,7 @@ const Navbar = () => {
 
     return (
         <header className={cn(
-            "sticky top-0 inset-x-0 h-14 w-full border-b border-transparent z-50 select-none",
+            "sticky top-0 inset-x-0 h-14 w-full border-b border-transparent z-[99999] select-none",
             scroll && "border-background/80 bg-background/40 backdrop-blur-md"
         )}>
             <AnimationContainer reverse delay={0.1} className="size-full">
