@@ -3,9 +3,9 @@ import SignInForm from "./auth/signin-form";
 import SignUpForm from "./auth/signup-form";
 
 // global
-import MaxWidthWrapper from "./global/max-width-wrapper";
 import { Icons } from "./global/icons";
-
+import MaxWidthWrapper from "./global/max-width-wrapper";
+import AnimationContainer from "./global/animation-container";
 // navigation
 import Navbar from "./navigation/navbar";
 import Footer from "./navigation/footer";
@@ -17,7 +17,11 @@ import Providers from "./providers/providers";
 import Sidebar from "./dashboard/sidebar";
 import DashboardNavbar from "./dashboard/dashboard-navbar";
 
+// pricing
 import PricingCards from "./pricing-cards";
+
+// blog
+import Blogs from "./blog/blogs";
 
 
 export {
@@ -26,7 +30,7 @@ export {
 
     Icons,
     MaxWidthWrapper,
-
+    AnimationContainer,
     Navbar,
     Footer,
 
@@ -36,4 +40,6 @@ export {
     DashboardNavbar,
 
     PricingCards,
+
+    Blogs,
 };

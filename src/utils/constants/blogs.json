@@ -1,0 +1,38 @@
+[
+    {
+        "title": "How to Maximize Your Productivity with Link Management Tools",
+        "image": "/assets/blog1.jpg",
+        "author_image": "https://example.com/images/author1.jpg",
+        "author_name": "John Doe",
+        "date_published": "2024-10-05",
+        "description": "Learn how to maximize your productivity with link management tools.",
+        "slug": "how-to-maximize-your-productivity-with-link-management-tools"
+    },
+    {
+        "title": "The Ultimate Guide to Organizing Links for Teams",
+        "image": "/assets/blog2.jpg",
+        "author_image": "https://example.com/images/author2.jpg",
+        "author_name": "Jane Smith",
+        "date_published": "2024-09-28",
+        "description": "How to organize links for teams.",
+        "slug": "the-ultimate-guide-to-organizing-links-for-teams"
+    },
+    {
+        "title": "Why Link Management is Essential for Digital Marketers",
+        "image": "/assets/blog3.jpg",
+        "author_image": "https://example.com/images/author3.jpg",
+        "author_name": "Chris Martin",
+        "date_published": "2024-09-20",
+        "description": "Link management is essential for digital marketers.",
+        "slug": "why-link-management-is-essential-for-digital-marketers"
+    },
+    {
+        "title": "Top 5 Features Every Link Management Software Should Have",
+        "image": "/assets/blog4.jpg",
+        "author_image": "https://example.com/images/author4.jpg",
+        "author_name": "Emily Clark",
+        "date_published": "2024-09-15",
+        "description": "The features that every link management software should have.",
+        "slug": "top-5-features-every-link-management-software-should-have"
+    }
+]
