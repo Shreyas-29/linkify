@@ -11,7 +11,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn, NAV_LINKS } from "@/utils";
-import { useAuth } from "@clerk/nextjs";
+import { useClerk } from "@clerk/nextjs";
 import { LucideIcon, ZapIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from 'react';
@@ -21,7 +21,7 @@ import AnimationContainer from "../global/animation-container";
 
 const Navbar = () => {
 
-    const { isLoaded, isSignedIn, signOut } = useAuth();
+    const { user } = useClerk();
 
     const [scroll, setScroll] = useState(false);
 
@@ -112,7 +112,7 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden lg:flex items-center">
-                        {isSignedIn ? (
+                        {user ? (
                             <div className="flex items-center">
                                 <Link href="/dashboard" className={buttonVariants({ size: "sm", })}>
                                     Dashboard
