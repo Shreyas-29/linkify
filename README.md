@@ -3,6 +3,8 @@
 # 🔗 Linkify - The Link Management Platform for Businesses(Landing Page)
 
 <!-- <img src="https://github.com/user-attachments/assets/deab03fd-4234-44c3-a6ad-484c4a1a02a1" alt="Linkify Thubmnail"> -->
+<img src="https://github.com/user-attachments/assets/ee867e8e-7871-4289-bd56-3eef40adb9b2" alt="Linkify Thumbnail" style="border-radius: 50px;" width="1280">
+
 
 ## 🌟 Introduction
 Linkify is an innovative link management software designed to help you shorten, track, and optimize your links effortlessly. Built with React, Node.js, and MongoDB, Linkify provides powerful analytics and user-friendly features to enhance your link-sharing experience.
@@ -18,9 +20,9 @@ Linkify is an innovative link management software designed to help you shorten, 
 
 Check out the live demo of Linkify here: [Live Preview](http://Linkify-demo.vercel.app)
 
-<!-- ## 🎥 Watch Tutorial on YouTube
+## 🎥 Watch Demo on YouTube
 
-Check out the tutorial to see how this link management system was built: [Watch the Tutorial](https://www.youtube.com/watch?v=your_tutorial_link) 💻 -->
+Check out the tutorial to see how this link management system was built: [Watch the Tutorial](https://youtu.be/3_sZPAfVR_U) 💻 
 
 ## 💻 Tech Stack
 
