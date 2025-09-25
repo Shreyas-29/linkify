@@ -14,14 +14,14 @@ import {
     SheetTrigger
 } from "@/components/ui/sheet";
 import { cn, NAV_LINKS } from "@/utils";
-import { useAuth } from "@clerk/nextjs";
+import { clearToken } from "@/lib/auth";
 import { LucideIcon, Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from 'react';
 
 const MobileNavbar = () => {
 
-    const { isSignedIn, signOut } = useAuth();
+    const isSignedIn = typeof window !== "undefined" && (document.cookie.includes("token=") || !!localStorage.getItem("auth_token"));
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -46,9 +46,17 @@ const MobileNavbar = () => {
                     <div className="flex flex-col items-start w-full py-2 mt-10">
                         <div className="flex items-center justify-evenly w-full space-x-2">
                             {isSignedIn ? (
-                                <Link href="/dashboard" className={buttonVariants({ variant: "outline", className: "w-full" })}>
-                                    Dashboard
-                                </Link>
+                                <>
+                                    <Link href="/dashboard" className={buttonVariants({ variant: "outline", className: "w-full" })}>
+                                        Dashboard
+                                    </Link>
+                                    <button
+                                        onClick={() => { clearToken(); window.location.href = "/"; }}
+                                        className={buttonVariants({ variant: "ghost", className: "w-full" })}
+                                    >
+                                        Sign out
+                                    </button>
+                                </>
                             ) : (
                                 <>
                                     <Link href="/auth/sign-in" className={buttonVariants({ variant: "outline", className: "w-full" })}>

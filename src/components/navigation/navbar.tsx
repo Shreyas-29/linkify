@@ -11,7 +11,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn, NAV_LINKS } from "@/utils";
-import { useClerk } from "@clerk/nextjs";
+import { clearToken } from "@/lib/auth";
 import { LucideIcon, ZapIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from 'react';
@@ -21,9 +21,8 @@ import AnimationContainer from "../global/animation-container";
 
 const Navbar = () => {
 
-    const { user } = useClerk();
-
     const [scroll, setScroll] = useState(false);
+    const [hasToken, setHasToken] = useState(false);
 
     const handleScroll = () => {
         if (window.scrollY > 8) {
@@ -35,8 +34,19 @@ const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
+        // read token from cookie or localStorage
+        const has = () => {
+            try {
+                const fromLocal = localStorage.getItem("auth_token");
+                const fromCookie = document.cookie.includes("token=");
+                setHasToken(!!fromLocal || fromCookie);
+            } catch {}
+        };
+        has();
+        const id = setInterval(has, 500);
         return () => {
             window.removeEventListener("scroll", handleScroll);
+            clearInterval(id);
         };
     }, []);
 
@@ -112,11 +122,17 @@ const Navbar = () => {
                     </div>
 
                     <div className="hidden lg:flex items-center">
-                        {user ? (
-                            <div className="flex items-center">
+                        {hasToken ? (
+                            <div className="flex items-center gap-x-3">
                                 <Link href="/dashboard" className={buttonVariants({ size: "sm", })}>
                                     Dashboard
                                 </Link>
+                                <button
+                                    onClick={() => { clearToken(); window.location.href = "/"; }}
+                                    className={buttonVariants({ size: "sm", variant: "ghost" })}
+                                >
+                                    Sign out
+                                </button>
                             </div>
                         ) : (
                             <div className="flex items-center gap-x-4">
