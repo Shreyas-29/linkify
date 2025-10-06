@@ -15,7 +15,7 @@ export const CARDS = [
         Icon: Link2Icon,
         name: "Shorten links",
         description: "Create short links that are easy to remember and share.",
-        href: "#",
+        href: "/dashboard",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-1",
         background: (
@@ -45,19 +45,19 @@ export const CARDS = [
         Icon: SearchIcon,
         name: "Search your links",
         description: "Quickly find the links you need with AI-powered search.",
-        href: "#",
+        href: "/dashboard",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-2",
         background: (
             <Command className="absolute right-10 top-10 w-[70%] origin-to translate-x-0 border border-border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:-translate-x-10 p-2">
                 <Input placeholder="Type to search..." />
                 <div className="mt-1 cursor-pointer">
-                    <div className="px-4 py-2 hover:bg-muted rounded-md">linkify.io/hdf00c</div>
-                    <div className="px-4 py-2 hover:bg-muted rounded-md">linkify.io/sdv0n0</div>
-                    <div className="px-4 py-2 hover:bg-muted rounded-md">linkify.io/03gndo</div>
-                    <div className="px-4 py-2 hover:bg-muted rounded-md">linkify.io/09vmmw</div>
-                    <div className="px-4 py-2 hover:bg-muted rounded-md">linkify.io/s09vws</div>
-                    <div className="px-4 py-2 hover:bg-muted rounded-md">linkify.io/sd8fv5</div>
+                    <div className="px-4 py-2 hover:bg-muted rounded-md">ccme-shortlink.io/hdf00c</div>
+                    <div className="px-4 py-2 hover:bg-muted rounded-md">ccme-shortlink.io/sdv0n0</div>
+                    <div className="px-4 py-2 hover:bg-muted rounded-md">ccme-shortlink.io/03gndo</div>
+                    <div className="px-4 py-2 hover:bg-muted rounded-md">ccme-shortlink.io/09vmmw</div>
+                    <div className="px-4 py-2 hover:bg-muted rounded-md">ccme-shortlink.io/s09vws</div>
+                    <div className="px-4 py-2 hover:bg-muted rounded-md">ccme-shortlink.io/sd8fv5</div>
                 </div>
             </Command>
         ),
@@ -66,7 +66,7 @@ export const CARDS = [
         Icon: WaypointsIcon,
         name: "Connect your apps",
         description: "Integrate with your favorite apps and services.",
-        href: "#",
+        href: "/dashboard",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-2 max-w-full overflow-hidden",
         background: (
@@ -78,7 +78,7 @@ export const CARDS = [
         name: "Calendar",
         description: "Keep track of your links with our calendar view.",
         className: "col-span-3 lg:col-span-1",
-        href: "#",
+        href: "/dashboard",
         cta: "Learn more",
         background: (
             <Calendar

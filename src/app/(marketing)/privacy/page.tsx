@@ -12,7 +12,7 @@ const Privacy = () => {
                     Last updated: 17th June 2024
                 </p>
                 <p className="mt-4">
-                    At <strong>Linkify</strong>, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
+                    At <strong>ccme-shortlink</strong>, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website and services.
                 </p>
 
                 <h2 className="text-xl font-medium mt-8">
@@ -139,7 +139,7 @@ const Privacy = () => {
                     Data Deletion
                 </h3>
                 <p className="mt-8 text-muted-foreground">
-                    You have the right to request the deletion of your personal information. Please contact us at support@linkify.com to make this request.
+                    You have the right to request the deletion of your personal information. Please contact us at support@ccme-shortlink.com to make this request.
                 </p>
 
                 <h2 className="text-xl font-medium mt-12">
@@ -167,11 +167,11 @@ const Privacy = () => {
                     Contact Us
                 </h2>
                 <p className="mt-8 text-muted-foreground">
-                    If you have any questions or concerns about this Privacy Policy, please contact us at support@linkify.io.
+                    If you have any questions or concerns about this Privacy Policy, please contact us at support@ccme-shortlink.io.
                 </p>
 
                 <p className="mt-8 font-medium">
-                    By using Linkify, you acknowledge that you have read, understood, and agree to the terms of this Privacy Policy.
+                    By using ccme-shortlink, you acknowledge that you have read, understood, and agree to the terms of this Privacy Policy.
                 </p>
             </AnimationContainer>
         </MaxWidthWrapper>

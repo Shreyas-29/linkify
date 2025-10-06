@@ -8,7 +8,7 @@ const SignUpPage = () => {
                 <Link href="/#home" className="flex items-center gap-x-2">
                     <Icons.logo className="w-6 h-6" />
                     <h1 className="text-lg font-medium">
-                        linkify
+                        ccme-shortlink
                     </h1>
                 </Link>
             </div>

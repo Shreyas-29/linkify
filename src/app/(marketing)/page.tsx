@@ -8,14 +8,13 @@ import MagicBadge from "@/components/ui/magic-badge";
 import MagicCard from "@/components/ui/magic-card";
 import { COMPANIES, PROCESS } from "@/utils";
 import { REVIEWS } from "@/utils/constants/misc";
-import { currentUser } from "@clerk/nextjs/server";
+import { cookies } from "next/headers";
 import { ArrowRightIcon, CreditCardIcon, StarIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const HomePage = async () => {
-
-    const user = await currentUser();
+    const token = cookies().get("token")?.value;
 
     return (
         <div className="overflow-x-hidden scrollbar-hide size-full">
@@ -30,24 +29,24 @@ const HomePage = async () => {
                             <span className="backdrop absolute inset-[1px] rounded-full bg-neutral-950 transition-colors duration-200 group-hover:bg-neutral-900" />
                             <span className="h-full w-full blur-md absolute bottom-0 inset-x-0 bg-gradient-to-tr from-primary/20"></span>
                             <span className="z-10 py-0.5 text-sm text-neutral-100 flex items-center justify-center gap-1">
-                                ✨ Manage links smarter
+                                ✨ Quản lý liên kết thông minh hơn
                                 <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
                             </span>
                         </button>
                         <h1 className="text-foreground text-center py-6 text-5xl font-medium tracking-normal text-balance sm:text-6xl md:text-7xl lg:text-8xl !leading-[1.15] w-full font-heading">
-                            Smart Links with <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
-                                Precision
+                            Phân tích traffic link với <span className="text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-clip-text inline-bloc">
+                                độ chính xác cao
                             </span>
                         </h1>
                         <p className="mb-12 text-lg tracking-tight text-muted-foreground md:text-xl text-balance">
-                            Effortlessly streamline your link management with Linkify.
+                            Tối ưu việc quản lý liên kết của bạn với ccme-shortlink.
                             <br className="hidden md:block" />
-                            <span className="hidden md:block">Shorten, track, and organize all your links in one place.</span>
+                            <span className="hidden md:block">Rút gọn, theo dõi và tổ chức tất cả liên kết ở một nơi.</span>
                         </p>
                         <div className="flex items-center justify-center whitespace-nowrap gap-4 z-50">
                             <Button asChild>
-                                <Link href={user ? "/dashboard" : "/auth/sign-in"} className="flex items-center">
-                                    Start creating for free
+                                <Link href={token ? "/dashboard" : "/auth/sign-in"} className="flex items-center">
+                                    Bắt đầu miễn phí
                                     <ArrowRightIcon className="w-4 h-4 ml-2" />
                                 </Link>
                             </Button>
@@ -83,7 +82,7 @@ const HomePage = async () => {
                     <div className="py-14">
                         <div className="mx-auto px-4 md:px-8">
                             <h2 className="text-center text-sm font-medium font-heading text-neutral-400 uppercase">
-                                Trusted by the best in the industry
+                                Được tin dùng bởi các thương hiệu hàng đầu
                             </h2>
                             <div className="mt-8">
                                 <ul className="flex flex-wrap items-center gap-x-6 gap-y-6 md:gap-x-16 justify-center">
@@ -110,12 +109,12 @@ const HomePage = async () => {
             <MaxWidthWrapper className="pt-10">
                 <AnimationContainer delay={0.1}>
                     <div className="flex flex-col w-full items-center lg:items-center justify-center py-8">
-                        <MagicBadge title="Features" />
+                        <MagicBadge title="Tính năng" />
                         <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-                            Manage Links Like a Pro
+                            Quản lý liên kết như một chuyên gia
                         </h2>
                         <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-                            Linkify is a powerful link management tool that helps you shorten, track, and organize all your links in one place.
+                            ccme-shortlink là công cụ quản lý liên kết mạnh mẽ giúp bạn rút gọn, theo dõi và tổ chức tất cả liên kết ở một nơi.
                         </p>
                     </div>
                 </AnimationContainer>
@@ -132,12 +131,12 @@ const HomePage = async () => {
             <MaxWidthWrapper className="py-10">
                 <AnimationContainer delay={0.1}>
                     <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
-                        <MagicBadge title="The Process" />
+                        <MagicBadge title="Quy trình" />
                         <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-                            Effortless link management in 3 steps
+                            Quản lý liên kết hiệu quả trong 3 bước
                         </h2>
                         <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-                            Follow these simple steps to optimize, organize, and share your links with ease.
+                            Thực hiện các bước đơn giản để tối ưu, tổ chức và chia sẻ liên kết dễ dàng.
                         </p>
                     </div>
                 </AnimationContainer>
@@ -165,44 +164,46 @@ const HomePage = async () => {
                 </div>
             </MaxWidthWrapper>
 
-            {/* Pricing Section */}
-            <MaxWidthWrapper className="py-10">
-                <AnimationContainer delay={0.1}>
-                    <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
-                        <MagicBadge title="Simple Pricing" />
-                        <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-                            Choose a plan that works for you
-                        </h2>
-                        <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-                            Get started with Linkify today and enjoy more features with our pro plans.
-                        </p>
-                    </div>
-                </AnimationContainer>
-                <AnimationContainer delay={0.2}>
-                    <PricingCards />
-                </AnimationContainer>
-                <AnimationContainer delay={0.3}>
-                    <div className="flex flex-wrap items-start md:items-center justify-center lg:justify-evenly gap-6 mt-12 max-w-5xl mx-auto w-full">
-                        <div className="flex items-center gap-2">
-                            <CreditCardIcon className="w-5 h-5 text-foreground" />
-                            <span className="text-muted-foreground">
-                                No credit card required
-                            </span>
-                        </div>
-                    </div>
-                </AnimationContainer>
-            </MaxWidthWrapper>
+            {/* Pricing Section - temporarily hidden */}
+            {false && (
+              <MaxWidthWrapper className="py-10">
+                  <AnimationContainer delay={0.1}>
+                      <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
+                          <MagicBadge title="Simple Pricing" />
+                          <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
+                              Choose a plan that works for you
+                          </h2>
+                          <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
+                              Get started with ccme-shortlink today and enjoy more features with our pro plans.
+                          </p>
+                      </div>
+                  </AnimationContainer>
+                  <AnimationContainer delay={0.2}>
+                      <PricingCards />
+                  </AnimationContainer>
+                  <AnimationContainer delay={0.3}>
+                      <div className="flex flex-wrap items-start md:items-center justify-center lg:justify-evenly gap-6 mt-12 max-w-5xl mx-auto w-full">
+                          <div className="flex items-center gap-2">
+                              <CreditCardIcon className="w-5 h-5 text-foreground" />
+                              <span className="text-muted-foreground">
+                                  No credit card required
+                              </span>
+                          </div>
+                      </div>
+                  </AnimationContainer>
+              </MaxWidthWrapper>
+            )}
 
             {/* Reviews Section */}
             <MaxWidthWrapper className="py-10">
                 <AnimationContainer delay={0.1}>
                     <div className="flex flex-col items-center lg:items-center justify-center w-full py-8 max-w-xl mx-auto">
-                        <MagicBadge title="Our Customers" />
+                        <MagicBadge title="Khách hàng của chúng tôi" />
                         <h2 className="text-center lg:text-center text-3xl md:text-5xl !leading-[1.1] font-medium font-heading text-foreground mt-6">
-                            What our users are saying
+                            Người dùng nói gì về chúng tôi
                         </h2>
                         <p className="mt-4 text-center lg:text-center text-lg text-muted-foreground max-w-lg">
-                            Here&apos;s what some of our users have to say about Linkify.
+                            Cảm nhận thực tế từ người dùng về ccme-shortlink.
                         </p>
                     </div>
                 </AnimationContainer>
@@ -300,15 +301,17 @@ const HomePage = async () => {
                     <LampContainer>
                         <div className="flex flex-col items-center justify-center relative w-full text-center">
                             <h2 className="bg-gradient-to-b from-neutral-200 to-neutral-400 py-4 bg-clip-text text-center text-4xl md:text-7xl !leading-[1.15] font-medium font-heading tracking-tight text-transparent mt-8">
-                                Step into the future of link management
+                                Bước vào tương lai của quản lý liên kết
                             </h2>
                             <p className="text-muted-foreground mt-6 max-w-md mx-auto">
-                                Experience the cutting-edge solution that transforms how you handle your links. Elevate your online presence with our next-gen platform.
+                                Trải nghiệm giải pháp hiện đại giúp bạn xử lý liên kết hiệu quả hơn. Nâng tầm hiện diện trực tuyến với nền tảng thế hệ mới.
                             </p>
                             <div className="mt-6">
-                                <Button>
-                                    Get started for free
+                                <Button asChild>
+                                    <Link href="/dashboard">
+                                    Bắt đầu miễn phí
                                     <ArrowRightIcon className="w-4 h-4 ml-2" />
+                                    </Link>
                                 </Button>
                             </div>
                         </div>

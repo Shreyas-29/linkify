@@ -1,21 +1,25 @@
 "use client";
 
-import { getAuthStatus } from "@/actions";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from 'next/navigation';
+import { getToken } from "@/lib/auth";
+import { apiMe } from "@/lib/api";
 
 const AuthCallbackPage = () => {
 
     const router = useRouter();
 
     const { data } = useQuery({
-        queryKey: ["auth-status"],
-        queryFn: async () => await getAuthStatus(),
-        retry: true,
-        retryDelay: 500,
+        queryKey: ["auth-me"],
+        queryFn: async () => {
+            const token = getToken();
+            if (!token) return { error: true } as any;
+            return apiMe(token);
+        },
+        retry: false,
     });
 
-    if (data?.success) {
+    if (data?.user) {
         router.push("/dashboard");
     }
 

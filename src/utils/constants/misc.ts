@@ -82,62 +82,62 @@ export const REVIEWS = [
         username: "@michaelsmith",
         avatar: "https://randomuser.me/api/portraits/men/1.jpg",
         rating: 5,
-        review: "This tool is a lifesaver! Managing and tracking my links has never been easier. A must-have for anyone dealing with numerous links."
+        review: "Công cụ này đúng là cứu cánh! Quản lý và theo dõi liên kết chưa bao giờ dễ đến thế. Bắt buộc phải có nếu bạn xử lý nhiều liên kết."
     },
     {
         name: "Emily Johnson",
         username: "@emilyjohnson",
         avatar: "https://randomuser.me/api/portraits/women/1.jpg",
         rating: 4,
-        review: "Very useful app! It has streamlined my workflow considerably. A few minor bugs, but overall a great experience."
+        review: "Ứng dụng rất hữu ích! Luồng công việc của tôi gọn gàng hơn hẳn. Vẫn còn vài lỗi nhỏ, nhưng tổng thể trải nghiệm rất tốt."
     },
     {
         name: "Daniel Williams",
         username: "@danielwilliams",
         avatar: "https://randomuser.me/api/portraits/men/2.jpg",
         rating: 5,
-        review: "I've been using this app daily for months. The insights and analytics it provides are invaluable. Highly recommend it!"
+        review: "Tôi dùng ứng dụng mỗi ngày suốt nhiều tháng. Insight và báo cáo phân tích mang lại giá trị lớn. Rất đáng dùng!"
     },
     {
         name: "Sophia Brown",
         username: "@sophiabrown",
         avatar: "https://randomuser.me/api/portraits/women/2.jpg",
         rating: 4,
-        review: "This app is fantastic! It offers everything I need to manage my links efficiently."
+        review: "Ứng dụng tuyệt vời! Cung cấp đủ mọi thứ tôi cần để quản lý liên kết hiệu quả."
     },
     {
         name: "James Taylor",
         username: "@jamestaylor",
         avatar: "https://randomuser.me/api/portraits/men/3.jpg",
         rating: 5,
-        review: "Absolutely love this app! It's intuitive and feature-rich. Has significantly improved how I manage and track links."
+        review: "Rất thích ứng dụng này! Trực quan và nhiều tính năng. Giúp tôi cải thiện đáng kể việc quản lý và theo dõi liên kết."
     },
     {
         name: "Olivia Martinez",
         username: "@oliviamartinez",
         avatar: "https://randomuser.me/api/portraits/women/3.jpg",
         rating: 4,
-        review: "Great app with a lot of potential. It has already saved me a lot of time. Looking forward to future updates and improvements."
+        review: "Ứng dụng rất tiềm năng. Đã giúp tôi tiết kiệm nhiều thời gian. Rất mong các cập nhật và cải tiến tiếp theo."
     },
     {
         name: "William Garcia",
         username: "@williamgarcia",
         avatar: "https://randomuser.me/api/portraits/men/4.jpg",
         rating: 5,
-        review: "This app is a game-changer for link management. It's easy to use, extremely powerful and highly recommended!"
+        review: "Ứng dụng thay đổi cuộc chơi trong quản lý liên kết. Dễ dùng, cực kỳ mạnh mẽ và rất đáng khuyến nghị!"
     },
     {
         name: "Mia Rodriguez",
         username: "@miarodriguez",
         avatar: "https://randomuser.me/api/portraits/women/4.jpg",
         rating: 4,
-        review: "I've tried several link management tools, but this one stands out. It's simple, effective."
+        review: "Tôi đã thử nhiều công cụ quản lý liên kết, và ứng dụng này nổi bật. Đơn giản, hiệu quả."
     },
     {
         name: "Henry Lee",
         username: "@henrylee",
         avatar: "https://randomuser.me/api/portraits/men/5.jpg",
         rating: 5,
-        review: "This app has transformed my workflow. Managing and analyzing links is now a breeze. I can't imagine working without it."
+        review: "Ứng dụng đã thay đổi cách tôi làm việc. Quản lý và phân tích liên kết giờ đây quá dễ. Khó mà làm việc thiếu nó."
     },
 ] as const;

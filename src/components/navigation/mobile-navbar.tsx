@@ -14,16 +14,35 @@ import {
     SheetTrigger
 } from "@/components/ui/sheet";
 import { cn, NAV_LINKS } from "@/utils";
-import { useAuth } from "@clerk/nextjs";
+import { clearToken, getUser } from "@/lib/auth";
 import { LucideIcon, Menu, X } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import PricingModal from "../ui/pricing-modal";
+import ChangePasswordModal from "../ui/ChangePasswordModal";
+import InvestorInviteModal from "../ui/investor-invite-modal";
 
 const MobileNavbar = () => {
 
-    const { isSignedIn, signOut } = useAuth();
+    const isSignedIn = typeof window !== "undefined" && (document.cookie.includes("token=") || !!localStorage.getItem("auth_token"));
 
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [pricingModalOpen, setPricingModalOpen] = useState(false);
+    const [investorOpen, setInvestorOpen] = useState(false);
+    const [changePwOpen, setChangePwOpen] = useState(false);
+    const [userEmail, setUserEmail] = useState<string>("");
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        try {
+            const raw = typeof window !== "undefined" ? localStorage.getItem("auth_user") : null;
+            if (raw) {
+                const u = JSON.parse(raw || "{}");
+                setUserEmail(u?.email || "");
+                setIsAdmin(u?.isAdmin || false);
+            }
+        } catch {}
+    }, [isOpen]);
 
     const handleClose = () => {
         setIsOpen(false);
@@ -44,11 +63,36 @@ const MobileNavbar = () => {
                         </Button>
                     </SheetClose>
                     <div className="flex flex-col items-start w-full py-2 mt-10">
+                        {isSignedIn && (
+                            <div className="w-full mb-4 px-1">
+                                <div className="text-xs text-muted-foreground">Tài khoản</div>
+                                <div className="text-sm font-medium break-all">{userEmail}</div>
+                            </div>
+                        )}
                         <div className="flex items-center justify-evenly w-full space-x-2">
                             {isSignedIn ? (
-                                <Link href="/dashboard" className={buttonVariants({ variant: "outline", className: "w-full" })}>
-                                    Dashboard
-                                </Link>
+                                <>
+                                    <Link href="/dashboard" className={buttonVariants({ variant: "outline", className: "w-full" })}>
+                                        Dashboard
+                                    </Link>
+                                    {isAdmin && (
+                                        <Link href="/admin" className={buttonVariants({ variant: "outline", className: "w-full" })}>
+                                            Admin
+                                        </Link>
+                                    )}
+                                    <button
+                                        onClick={() => { setChangePwOpen(true); }}
+                                        className={buttonVariants({ variant: "ghost", className: "w-full" })}
+                                    >
+                                        Đổi mật khẩu
+                                    </button>
+                                    <button
+                                        onClick={() => { clearToken(); window.location.href = "/"; }}
+                                        className={buttonVariants({ variant: "ghost", className: "w-full" })}
+                                    >
+                                        Sign out
+                                    </button>
+                                </>
                             ) : (
                                 <>
                                     <Link href="/auth/sign-in" className={buttonVariants({ variant: "outline", className: "w-full" })}>
@@ -85,13 +129,35 @@ const MobileNavbar = () => {
                                                 </AccordionContent>
                                             </>
                                         ) : (
-                                            <Link
-                                                href={link.href}
-                                                onClick={handleClose}
-                                                className="flex items-center w-full py-4 font-medium text-muted-foreground hover:text-foreground"
-                                            >
-                                                <span>{link.title}</span>
-                                            </Link>
+                                            link.openInvestorModal ? (
+                                                <button
+                                                    onClick={() => {
+                                                        setInvestorOpen(true);
+                                                        handleClose();
+                                                    }}
+                                                    className="flex items-center w-full py-4 font-medium text-muted-foreground hover:text-foreground"
+                                                >
+                                                    <span>{link.title}</span>
+                                                </button>
+                                            ) : link.isModal ? (
+                                                <button
+                                                    onClick={() => {
+                                                        setPricingModalOpen(true);
+                                                        handleClose();
+                                                    }}
+                                                    className="flex items-center w-full py-4 font-medium text-muted-foreground hover:text-foreground"
+                                                >
+                                                    <span>{link.title}</span>
+                                                </button>
+                                            ) : (
+                                                <Link
+                                                    href={link.href}
+                                                    onClick={handleClose}
+                                                    className="flex items-center w-full py-4 font-medium text-muted-foreground hover:text-foreground"
+                                                >
+                                                    <span>{link.title}</span>
+                                                </Link>
+                                            )
                                         )}
                                     </AccordionItem>
                                 ))}
@@ -100,6 +166,10 @@ const MobileNavbar = () => {
                     </div>
                 </SheetContent>
             </Sheet>
+            
+            <PricingModal open={pricingModalOpen} onOpenChange={setPricingModalOpen} />
+            <InvestorInviteModal open={investorOpen} onOpenChange={setInvestorOpen} />
+            <ChangePasswordModal open={changePwOpen} onOpenChange={setChangePwOpen} />
         </div>
     )
 };
